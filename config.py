@@ -19,8 +19,10 @@ class ConnectionString:
             crsr: pyodbc.Cursor = cnxn.cursor()
             #select query
             select_sql = "SELECT @@version"
+            select_sql2 = "SELECT * FROM Game WHERE game_ID=123"
             #execute select query
             crsr.execute(select_sql)
+            crsr.execute(select_sql2)
             print(crsr.fetchall())
             print('datebase connection success')
             # Close db connetion
