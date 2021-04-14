@@ -1,0 +1,14 @@
+{
+    "command": "open chest",
+    "conditions": [
+      {"primitive": "obj-loc-is-equal", "arguments": ["item", "chest", "#"]},
+      {"primitive": "not-equal", "arguments": ["item", "chest", "is-open", "true"]}
+      ],
+    "true_part": [
+      {"primitive": "for-all", "arguments": ["item", "#", "in-chest", "true"]},
+      {"primitive": "mv-item-to-room", "arguments": ["#", "#"]}
+    ],
+    "false_part": [
+      {"primitive": "message", "arguments": ["game", "cannot-open-that"]}
+    ]
+  }

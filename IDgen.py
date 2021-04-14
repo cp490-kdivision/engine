@@ -5,6 +5,7 @@ from config import *
 
 def generateID(column,table,ID):
     condition=False
+    # if id existed loop again
     while condition==False:
         S = 10  # number of characters in the string.  
         # call random.choices() string module to find the string in Uppercase + numeric data.  
@@ -24,10 +25,9 @@ def generateID(column,table,ID):
         #execute select query
         crsr.execute(select_sql)
         SQLresult = crsr.fetchall()
-        # Close db connetion
-        cnxn.close()
         #check if ID exist
         if not SQLresult:
             condition=True
-    print("The randomly generated string is : " + str(newID)) # print the random data
+    # Close db connetion
+    cnxn.close()
     return newID
