@@ -3,9 +3,6 @@ import json
 import IDgen
 from config import *
 
-with open('event.json') as f:
-        data = json.load(f)
-
 #create PYOBDC connection object
 cnxn: pyodbc.Connection = pyodbc.connect(coalEngineDBCon.con)
 #cursor object from connection
