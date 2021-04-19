@@ -1,0 +1,9 @@
+{
+    "mv-item-to-char" : "Moving your item to character's inventory.",
+    "item-not-here" : "Item you are lookin for is not here",
+    "go" : "move character to next direction",
+    "cannot-open-that" : "Chest cannot be openned.",
+    "inventory" : "list items located with character (and not in a room)",
+    "mv-item-to-room" : "move the item to next room",
+    "obj-loc-is-eqaul" : "True if object location"
+}
