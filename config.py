@@ -32,7 +32,7 @@ class ConnectionString:
             cnxn.close()
         
 
-coalEngineDBCon = ConnectionString('cp490-coal.database.windows.net','coal_engine_db','{ODBC Driver 17 for SQL Server}','user123','ketchup123$')
+coalEngineDBCon = ConnectionString('cp490-coal.database.windows.net','coal_engine_db','{ODBC Driver 17 for SQL Server}','admin123','tomato123$')
 # # server connect info
 # server = 'cp490-coal.database.windows.net'
 # database = 'coal_engine_db'
