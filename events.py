@@ -157,4 +157,10 @@ if __name__ == '__main__':
     print('Welcome to MUD!')
     print('====================')
     print()
+    player_name = input("Hello there, what is your name?\n :>")
+    print("Well then, " + player_name + ".\n");
+    
+    print("================================")
+
     print('To Play enter the Commands: ')
+    userinput = input(":> ")
