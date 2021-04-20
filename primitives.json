@@ -1,0 +1,15 @@
+{
+    "mv-item-to-char" : "Moving your item to character's inventory.",
+    "item-not-here" : "Item you are lookin for is not here",
+    "go" : "move character to next direction",
+    "inventory" : "list items located with character (and not in a room)",
+    "mv-item-to-room" : "move the item to next room",
+    "obj-loc-is-equal" : "True if object location",
+    "look" : "send room description to the user",
+    "message" : "send text from object to the user",
+    "dec" : "object <- object -1 ",
+    "inc" : "object <- object +1 ",
+    "is-equal" : "True if object == value",
+    "is-gt" : "True of object(key) & object(key) > value",
+    "is-it" : "True of object(key) & object(key) < value"
+}
