@@ -1,6 +1,6 @@
 import pyodbc
 import json
-import IDgen
+import uuid
 from config import *
 
 def postEvent(eventJson,eventID):
@@ -36,7 +36,7 @@ def postTrue(trueJson,eventID):
         #cursor object from connection
         crsr: pyodbc.Cursor = cnxn.cursor()
         #inject event true
-        trueID = IDgen.generateID('true_ID','Events_True',eventID)
+        trueID = uuid.uuid4()
         eventTrue = json.dumps(trueJson['true_part'])
         trueSQL = "INSERT INTO [Events_True] (true_ID,event_ID,true_Argument) VALUES ('{}','{}','{}')".format(trueID,eventID,eventTrue)
         #execute injection
@@ -60,7 +60,7 @@ def postFalse(falseJson,eventID):
         #cursor object from connection
         crsr: pyodbc.Cursor = cnxn.cursor()
         #inject event false
-        falseID = IDgen.generateID('false_ID','Events_False',eventID)
+        falseID = uuid.uuid4()
         eventFalse = json.dumps(falseJson['false_part'])
         falseSQL = "INSERT INTO [Events_False] (false_ID,event_ID,false_Argument) VALUES ('{}','{}','{}')".format(falseID,eventID,eventFalse)
         # #execute injection
@@ -80,7 +80,7 @@ def postFalse(falseJson,eventID):
 def sendDataTestrun():
     with open('event.json') as f:
         data = json.load(f)
-    eventID = IDgen.generateID('event_ID','Events','')
+    eventID = uuid.uuid4()
     result1 = postEvent(data,eventID)
     result3 = postTrue(data,eventID)
     result2 = postFalse(data,eventID)
