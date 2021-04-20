@@ -153,7 +153,7 @@ class cmdBlank:
         self.id = id
         self.game_id = game_id
 
-if __name__ == '__main__':
+class TextAdventureCmd(cmd.Cmd):
     print('Welcome to MUD!')
     print('====================')
     print()
@@ -163,4 +163,16 @@ if __name__ == '__main__':
     print("================================")
 
     print('To Play enter the Commands: ')
-    userinput = input(":> ")
+    prompt = '\n> '
+
+    # The default() method is called when none of the other do_*() command methods match.
+    def default(self, arg):
+        print('I do not understand that command.')
+
+    # A very simple "quit" command to terminate the program:
+    def do_quit(self, arg):
+        """Quit the game."""
+        return True
+
+if __name__ == '__main__':
+    TextAdventureCmd().cmdloop()
